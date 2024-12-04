@@ -50,7 +50,7 @@ int main(){
     Nod* radacina= NULL;
     int val[]={};
 
-
+    printf("Com4");
 
     return 0;
 }
