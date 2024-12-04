@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<string.h>
 
+//Str nodului arborelui
 typedef struct nod
 {
     int valoare;
@@ -8,6 +9,7 @@ typedef struct nod
     struct nod* dreapta;
 }Nod;
 
+//Creeaza un nod nou
 Nod* creeazaNod(int val){
     Nod* nod_N=(Nod*)malloc(sizeof(Nod));
     nod_N->valoare=val;
@@ -15,6 +17,33 @@ Nod* creeazaNod(int val){
     nod_N->dreapta=NULL;
     return nod_N;
 }
+
+//inseram un nod in arbore
+Nod* insereaza(Nod* radacina, int val){
+if(radacina==NULL){
+    return creeazaNod(val);
+}
+if(val<radacina->valoare){
+    radacina->stanga=insereaza(radacina->stanga,val);
+}else{
+    radacina->dreapta=inserare(radacina->dreapta,val);
+}
+return radacina;
+}
+
+
+//Traversare in PreOrdine
+Nod* PreOrdine(Nod* radacina){
+
+if(radacina!=NULL){
+    printf("%d ", radacina->valoare);
+    PreOrdine(radacina->stanga);
+    PreOrdine(radacina->dreapta);
+}
+
+}
+
+
 
 int main(){
     Nod* radacina= NULL;
