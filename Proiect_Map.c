@@ -32,7 +32,6 @@ return radacina;
 }
 
  
- 
 //Traversare in PreOrdine
 Nod* PreOrdine(Nod* radacina){
 
