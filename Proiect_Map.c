@@ -55,10 +55,24 @@ void InOrdine(Nod* radacina) {
 
 
 int main(){
-    Nod* radacina= NULL;
-    int val[]={};
+   Nod* radacina = NULL;
+    int n = 10; 
+    int val_Max = 100; 
 
-    printf("Com4");
+    srand(time(NULL));
+
+    for (int i = 0; i < n; i++) {
+        int valoareAleatoare = rand() % val_Max;
+        radacina = insereaza(radacina, valoareAleatoare);
+    }
+
+    printf("Pre-Ordine: ");
+    preOrdine(radacina);
+    printf("\n");
+
+    printf("In-Ordine: ");
+    inOrdine(radacina);
+    printf("\n");
 
     return 0;
 }
