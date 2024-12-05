@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<string.h>
-
+#include<stdlib.h>
+#include<time.h>
 //Str nodului arborelui
 typedef struct nod
 {
@@ -26,7 +27,7 @@ if(radacina==NULL){
 if(val<radacina->valoare){
     radacina->stanga=insereaza(radacina->stanga,val);
 }else{
-    radacina->dreapta=inserare(radacina->dreapta,val);
+    radacina->dreapta=insereaza(radacina->dreapta,val);
 }
 return radacina;
 }
@@ -34,17 +35,17 @@ return radacina;
 
  
 //Traversare in PreOrdine
-Nod* PreOrdine(Nod* radacina){
+Nod* preOrdine(Nod* radacina){
 
 if(radacina!=NULL){
     printf("%d ", radacina->valoare);
-    PreOrdine(radacina->stanga);
-    PreOrdine(radacina->dreapta);
+    preOrdine(radacina->stanga);
+    preOrdine(radacina->dreapta);
 }
 
 }
 
-void InOrdine(Nod* radacina) {
+void inOrdine(Nod* radacina) {
     if (radacina != NULL) {
         inOrdine(radacina->stanga);
         printf("%d ", radacina->valoare);
@@ -53,10 +54,10 @@ void InOrdine(Nod* radacina) {
 }
 
 
-void PostOrdine(Nod* radacina) {
+void postOrdine(Nod* radacina) {
     if (radacina != NULL) {
-        PostOrdine(radacina->stanga);
-        PostOrdine(radacina->dreapta);
+        postOrdine(radacina->stanga);
+        postOrdine(radacina->dreapta);
         printf("%d ", radacina->valoare);
     }
 }
