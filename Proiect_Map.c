@@ -44,7 +44,6 @@ if(radacina!=NULL){
 
 }
 
-// Traversare InOrdine
 void InOrdine(Nod* radacina) {
     if (radacina != NULL) {
         inOrdine(radacina->stanga);
@@ -53,6 +52,31 @@ void InOrdine(Nod* radacina) {
     }
 }
 
+
+void PostOrdine(Nod* radacina) {
+    if (radacina != NULL) {
+        PostOrdine(radacina->stanga);
+        PostOrdine(radacina->dreapta);
+        printf("%d ", radacina->valoare);
+    }
+}
+
+void peNiveluri(Nod* radacina) {
+    if (radacina == NULL) return;
+
+    Nod* coada[100];
+    int inceput = 0, sfarsit = 0;
+
+    coada[sfarsit++] = radacina;
+
+    while (inceput < sfarsit) {
+        Nod* curent = coada[inceput++];
+        printf("%d ", curent->valoare);
+
+        if (curent->stanga != NULL) coada[sfarsit++] = curent->stanga;
+        if (curent->dreapta != NULL) coada[sfarsit++] = curent->dreapta;
+    }
+}
 
 int main(){
    Nod* radacina = NULL;
@@ -72,6 +96,14 @@ int main(){
 
     printf("In-Ordine: ");
     inOrdine(radacina);
+    printf("\n");
+
+    printf("Post-Ordine: ");
+    postOrdine(radacina);
+    printf("\n");
+
+    printf("Pe Niveluri: ");
+    peNiveluri(radacina);
     printf("\n");
 
     return 0;
