@@ -44,6 +44,14 @@ if(radacina!=NULL){
 
 }
 
+// Traversare InOrdine
+void InOrdine(Nod* radacina) {
+    if (radacina != NULL) {
+        inOrdine(radacina->stanga);
+        printf("%d ", radacina->valoare);
+        inOrdine(radacina->dreapta);
+    }
+}
 
 
 int main(){
