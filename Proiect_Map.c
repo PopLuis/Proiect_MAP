@@ -44,7 +44,7 @@ if(radacina!=NULL){
 }
 
 }
-
+//Traversare in InOrdine
 void inOrdine(Nod* radacina) {
     if (radacina != NULL) {
         inOrdine(radacina->stanga);
@@ -53,7 +53,7 @@ void inOrdine(Nod* radacina) {
     }
 }
 
-
+//Traversare in PostOrdine
 void postOrdine(Nod* radacina) {
     if (radacina != NULL) {
         postOrdine(radacina->stanga);
@@ -61,7 +61,7 @@ void postOrdine(Nod* radacina) {
         printf("%d ", radacina->valoare);
     }
 }
-
+//Traversare pe Niveluri
 void peNiveluri(Nod* radacina) {
     if (radacina == NULL) return;
 
@@ -85,11 +85,14 @@ int main(){
     int val_Max = 100; 
 
     srand(time(NULL));
-
+    
+    //Adaugare de valori random in radacina
     for (int i = 0; i < n; i++) {
         int valoareAleatoare = rand() % val_Max;
         radacina = insereaza(radacina, valoareAleatoare);
     }
+
+//Printare rezultate traversari
 
     printf("Pre-Ordine: ");
     preOrdine(radacina);
