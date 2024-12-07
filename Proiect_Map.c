@@ -93,7 +93,7 @@ int main(){
     }
 
 //Printare rezultate traversari
-
+    printf("Arbore binar:\n");
     printf("Pre-Ordine: ");
     preOrdine(radacina);
     printf("\n");
@@ -109,6 +109,7 @@ int main(){
     printf("Pe Niveluri: ");
     peNiveluri(radacina);
     printf("\n");
+    
 
     return 0;
 }
