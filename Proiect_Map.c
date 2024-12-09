@@ -110,6 +110,7 @@ int main(){
     peNiveluri(radacina);
     printf("\n");
     
+    prinf("Merge bine!");
 
     return 0;
 }
