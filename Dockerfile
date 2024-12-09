@@ -8,7 +8,8 @@ WORKDIR  /usr/src/myapp
 COPY Proiect_Map.c .
 
 # 4. Construim aplicația folosind gcc
-RUN gcc myapp -o Proiect_MAP
+RUN gcc Proiect_Map.c -o Proiect_MAP
 
 # 5. Definim comanda implicită care va fi rulată când containerul este pornit
 CMD ["./myapp"]
+
